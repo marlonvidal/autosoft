@@ -8,5 +8,6 @@ namespace AutoSoft.Infrastructure.Commands
 {
     public interface ICommand
     {
+
     }
 }

@@ -1,11 +1,13 @@
-﻿using AutoSoft.Infrastructure.Domain;
-using AutoSoft.Domain.Phone;
+﻿using AutoSoft.Infrastructure.Commands;
+using AutoSoft.Infrastructure.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoSoft.Domain.Customer.Command;
+using AutoSoft.Domain.Customer.Validation;
+using FluentValidation;
 
 namespace AutoSoft.Domain.Customer
 {
@@ -17,24 +19,28 @@ namespace AutoSoft.Domain.Customer
         public string Address { get; private set; }
         public string City { get; private set; }
         public string CpfCnpj { get; private set; }
+        public IList<Phone.Phone> MyProperty { get; set; }
 
         protected Customer()
         {
 
         }
 
-        public static Customer Create(CreateCustomerCommand command)
+        private Customer(CreateCustomerCommand command) : base(command.ID)
         {
-            var customer = new Customer();
-            customer.ID = command.ID;
-            customer.Address = command.Address;
-            customer.City = command.City;
-            customer.CpfCnpj = command.CpfCnpj;
-            customer.Email = command.Email;
-            customer.FirstName = command.FirstName;
-            customer.LastName = command.LastName;
+            Address = command.Address;
+            City = command.City;
+            CpfCnpj = command.CpfCnpj;
+            Email = command.Email;
+            FirstName = command.FirstName;
+            LastName = command.LastName;
+        }
 
-            return customer;
+        public static Customer Create(CreateCustomerCommand command, 
+            IValidator<CreateCustomerCommand> validator)
+        {
+            validator.ValidateCommand(command);
+            return new Customer(command);
         }
     }
 }
