@@ -3,9 +3,9 @@ Sistema de gestão de oficina mecânica
 
 Stack utilizada:
 
-.NET Core 1.0
-Angular 2
+C# 6.0
+ASP.NET 4.6.2
 Bootstrap
 Web API 2
 Entity Framework
-MySQL
+MongoDB
