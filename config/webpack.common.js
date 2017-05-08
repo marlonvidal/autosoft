@@ -5,9 +5,9 @@ var helpers = require('./helpers');
 
 module.exports = {
     entry: {
-        'polyfills': './src/polyfills.ts',
-        'vendor': './src/vendor.ts',
-        'app': './src/main.ts'
+        'polyfills': './src/AutoSoft.App/polyfills.ts',
+        'vendor': './src/AutoSoft.App/vendor.ts',
+        'app': './src/AutoSoft.App/main.ts'
     },
 
     resolve: {
@@ -21,7 +21,7 @@ module.exports = {
               loaders: [
                 {
                     loader: 'awesome-typescript-loader',
-                    options: { configFileName: helpers.root('src', 'tsconfig.json') }
+                    options: { configFileName: helpers.root('src/AutoSoft.App', 'tsconfig.json') }
                 }, 'angular2-template-loader'
               ]
           },
@@ -35,12 +35,12 @@ module.exports = {
           },
           {
               test: /\.css$/,
-              exclude: helpers.root('src', 'app'),
+              exclude: helpers.root('src/AutoSoft.App', 'app'),
               loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
           },
           {
               test: /\.css$/,
-              include: helpers.root('src', 'app'),
+              include: helpers.root('src/AutoSoft.App', 'app'),
               loader: 'raw-loader'
           }
         ]
@@ -51,7 +51,7 @@ module.exports = {
       new webpack.ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
         /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        helpers.root('./src'), // location of your src
+        helpers.root('./src/AutoSoft.App'), // location of your src
         {} // a map of your routes
       ),
 
@@ -60,7 +60,7 @@ module.exports = {
       }),
 
       new HtmlWebpackPlugin({
-          template: 'src/index.html'
+          template: 'src/AutoSoft.App/index.html'
       })
     ]
 };
