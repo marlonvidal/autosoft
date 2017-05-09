@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{26BD643A-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{10968906-F762-412D-827F-F4FBE9A95689}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain.Tests", "AutoSoft.Domain.Tests\AutoSoft.Domain.Tests.csproj", "{DD4B4714-15C4-42B7-99D2-1E73ED171A23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain.Tests", "src\AutoSoft.Domain.Tests\AutoSoft.Domain.Tests.csproj", "{DD4B4714-15C4-42B7-99D2-1E73ED171A23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
