@@ -5,16 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Services
+namespace AutoSoft.Domain.Items
 {
-    public class ServiceDiscrimination : ValueObject<int>
+    public class ItemDiscrimination : ValueObject<int>
     {
-        protected ServiceDiscrimination()
+        protected ItemDiscrimination()
         {
 
         }
 
         public string Description { get; private set; }
+        public MeasurementTypes MeasurementType { get; private set; }
         public decimal Value { get; private set; }
     }
 }

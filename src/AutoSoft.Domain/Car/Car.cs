@@ -1,4 +1,6 @@
-﻿using AutoSoft.Domain.Manufacturers;
+﻿using AutoSoft.Domain.Colors;
+using AutoSoft.Domain.Manufacturers;
+using AutoSoft.Domain.Models;
 using AutoSoft.Infrastructure.Domain;
 using System;
 using System.Collections.Generic;
@@ -12,5 +14,8 @@ namespace AutoSoft.Domain.Cars
     {
         public string Plate { get; private set; }
         public Manufacturer Manufacturer { get; private set; }
+        public Model Model { get; private set; }
+        public Color Color { get; private set; }
+        public string Year { get; private set; }
     }
 }
