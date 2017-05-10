@@ -1,11 +1,12 @@
-﻿using AutoSoft.Infrastructure.Commands;
+﻿using AutoSoft.Domain.Phones;
+using AutoSoft.Infrastructure.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Customer.Command
+namespace AutoSoft.Domain.Customers.Command
 {
     public class CreateCustomerCommand : ICommand
     {
@@ -16,6 +17,6 @@ namespace AutoSoft.Domain.Customer.Command
         public string Address { get; set; }
         public string City { get; set; }
         public string CpfCnpj { get; set; }
-        public Phone.Phone Phone { get; set; }
+        public Phone Phone { get; set; }
     }
 }

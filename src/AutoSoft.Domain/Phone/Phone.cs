@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoSoft.Domain.Phones.Command;
+using AutoSoft.Domain.Phones.Validation;
+using AutoSoft.Infrastructure.Domain;
 
-namespace AutoSoft.Domain.Phone
+namespace AutoSoft.Domain.Phones
 {
-    public class Phone
+    public class Phone : ValueObject<int>
     {
         public string DDD { get; private set; }
         public string Number { get; private set; }
@@ -16,13 +14,16 @@ namespace AutoSoft.Domain.Phone
 
         }
 
-        public static Phone Create(string DDD, string number)
+        protected Phone(CreatePhoneCommand command) : base(command.ID)
         {
-            var phone = new Phone();
-            phone.DDD = DDD;
-            phone.Number = number;
+            DDD = command.DDD;
+            Number = command.Number;
+        }
 
-            return phone;
+        public static Phone Create(CreatePhoneCommand command, CreatePhoneValidation validator)
+        {
+            validator.ValidateCommand(command);
+            return new Phone(command);
         }
     }
 }

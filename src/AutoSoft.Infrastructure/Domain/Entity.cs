@@ -8,7 +8,7 @@ namespace AutoSoft.Infrastructure.Domain
 {
     public abstract class Entity<T> : IEntity<T>
     {
-        public T ID { get; protected set; }
+        public T ID { get; private set; }
 
         protected Entity()
         {

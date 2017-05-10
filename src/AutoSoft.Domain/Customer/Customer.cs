@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutoSoft.Domain.Customer.Command;
-using AutoSoft.Domain.Customer.Validation;
+using AutoSoft.Domain.Customers.Command;
+using AutoSoft.Domain.Customers.Validation;
 using FluentValidation;
+using AutoSoft.Domain.Phones;
 
-namespace AutoSoft.Domain.Customer
+namespace AutoSoft.Domain.Customers
 {
     public class Customer : Entity<long>
     {
@@ -19,7 +20,7 @@ namespace AutoSoft.Domain.Customer
         public string Address { get; private set; }
         public string City { get; private set; }
         public string CpfCnpj { get; private set; }
-        public IList<Phone.Phone> MyProperty { get; set; }
+        public IList<Phone> MyProperty { get; set; }
 
         protected Customer()
         {

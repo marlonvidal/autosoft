@@ -21,7 +21,7 @@ namespace AutoSoft.Domain.Tests.Customer
         public CreateCustomerTests()
         {
             _command = new CreateCustomerCommand();
-            _validator = new CreateCustomerValidator();
+            _validator = new CreateCustomerValidation();
         }
 
 

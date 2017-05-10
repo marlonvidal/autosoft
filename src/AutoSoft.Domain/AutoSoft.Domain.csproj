@@ -44,11 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car\Car.cs" />
     <Compile Include="Customer\Command\CreateCustomerCommand.cs" />
     <Compile Include="Customer\Customer.cs" />
-    <Compile Include="Customer\Validation\CreateCustomerValidator.cs" />
+    <Compile Include="Customer\Validation\CreateCustomerValidation.cs" />
+    <Compile Include="Manufacturers\Manufacturer.cs" />
+    <Compile Include="Phone\Command\CreatePhoneCommand.cs" />
     <Compile Include="Phone\Phone.cs" />
+    <Compile Include="Phone\Validation\CreatePhoneValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workers\Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoSoft.Infrastructure\AutoSoft.Infrastructure.csproj">

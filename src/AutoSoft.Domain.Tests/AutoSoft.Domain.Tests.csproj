@@ -66,11 +66,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\AutoSoft.Domain\AutoSoft.Domain.csproj">
+    <ProjectReference Include="..\AutoSoft.Domain\AutoSoft.Domain.csproj">
       <Project>{e670c0f0-800e-43bf-abcc-cabf1900e68c}</Project>
       <Name>AutoSoft.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\src\AutoSoft.Infrastructure\AutoSoft.Infrastructure.csproj">
+    <ProjectReference Include="..\AutoSoft.Infrastructure\AutoSoft.Infrastructure.csproj">
       <Project>{78cb568b-fa9d-4130-ad0b-589503402cbe}</Project>
       <Name>AutoSoft.Infrastructure</Name>
     </ProjectReference>

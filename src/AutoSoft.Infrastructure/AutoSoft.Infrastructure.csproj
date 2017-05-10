@@ -47,6 +47,7 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\IValueObject.cs" />
     <Compile Include="Validation\ValidationException.cs" />
     <Compile Include="Validation\ValidatorExtensions.cs" />
     <Compile Include="Domain\ValueObject.cs" />
