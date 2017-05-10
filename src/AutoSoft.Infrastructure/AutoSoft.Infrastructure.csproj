@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.5.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentValidation, Version=6.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FluentValidation.6.4.1\lib\Net45\FluentValidation.dll</HintPath>
       <Private>True</Private>
@@ -44,12 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandSender.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
+    <Compile Include="Commands\ICommandHandlerAsync.cs" />
+    <Compile Include="Commands\ICommandSender.cs" />
+    <Compile Include="DependencyResolver\AutofacResolver.cs" />
+    <Compile Include="DependencyResolver\IResolver.cs" />
+    <Compile Include="Domain\AggregateRoot.cs" />
     <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="Domain\IDomainEvent.cs" />
     <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\IEventStore.cs" />
+    <Compile Include="Domain\IRepository.cs" />
     <Compile Include="Domain\IValueObject.cs" />
+    <Compile Include="Events\EventFactory.cs" />
+    <Compile Include="Events\EventPublisher.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\IEventHandlerAsync.cs" />
+    <Compile Include="Events\IEventPublisher.cs" />
     <Compile Include="Validation\ValidationException.cs" />
-    <Compile Include="Validation\ValidatorExtensions.cs" />
+    <Compile Include="Validation\ValidationExtensions.cs" />
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

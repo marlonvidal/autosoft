@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace AutoSoft.Infrastructure.Domain
 {
-    public static class ValidatorExtensions
+    public static class ValidationExtensions
     {
         public static void ValidateCommand<TCommand>(this IValidator<TCommand> validator, TCommand command) 
             where TCommand : ICommand

@@ -53,6 +53,8 @@
     <Compile Include="Phone\Phone.cs" />
     <Compile Include="Phone\Validation\CreatePhoneValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\ServiceDiscrimination.cs" />
     <Compile Include="Workers\Worker.cs" />
   </ItemGroup>
   <ItemGroup>
