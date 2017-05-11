@@ -9,6 +9,8 @@ Stack utilizada:
 * Web API 2
 * Entity Framework
 * MongoDB
+* AutoFac
+* AutoMapper
 
 Arquitetura utilizada
 
