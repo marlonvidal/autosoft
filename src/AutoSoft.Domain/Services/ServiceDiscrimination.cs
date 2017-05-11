@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Services
+namespace AutoSoft.Domain.CoreBC.Services
 {
     public class ServiceDiscrimination : ValueObject<int>
     {

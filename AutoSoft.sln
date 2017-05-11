@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.WebApi", "src\Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.WebApi.Tests", "src\AutoSoft.WebApi.Tests\AutoSoft.WebApi.Tests.csproj", "{7FAAEC17-73BE-4055-9C52-9E4CBB6AB65F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain", "src\AutoSoft.Domain\AutoSoft.Domain.csproj", "{E670C0F0-800E-43BF-ABCC-CABF1900E68C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain.CoreBC", "src\AutoSoft.Domain\AutoSoft.Domain.CoreBC.csproj", "{E670C0F0-800E-43BF-ABCC-CABF1900E68C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Infrastructure", "src\AutoSoft.Infrastructure\AutoSoft.Infrastructure.csproj", "{78CB568B-FA9D-4130-AD0B-589503402CBE}"
 EndProject
@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreBoundedContext", "CoreB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{10968906-F762-412D-827F-F4FBE9A95689}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain.Tests", "src\AutoSoft.Domain.Tests\AutoSoft.Domain.Tests.csproj", "{DD4B4714-15C4-42B7-99D2-1E73ED171A23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain.CoreBC.Tests", "src\AutoSoft.Domain.Tests\AutoSoft.Domain.CoreBC.Tests.csproj", "{DD4B4714-15C4-42B7-99D2-1E73ED171A23}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A476C366-61F3-4B44-B6BD-491E5E231CBC}"
 EndProject

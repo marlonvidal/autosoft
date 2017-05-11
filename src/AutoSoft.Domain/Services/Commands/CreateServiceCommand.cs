@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Services.Commands
+namespace AutoSoft.Domain.CoreBC.Services.Commands
 {
     public class CreateServiceCommand : ICommand
     {

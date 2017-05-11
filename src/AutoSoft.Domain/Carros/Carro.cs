@@ -1,6 +1,6 @@
-﻿using AutoSoft.Domain.Cores;
-using AutoSoft.Domain.Fabricantes;
-using AutoSoft.Domain.Modelos;
+﻿using AutoSoft.Domain.CoreBC.Cores;
+using AutoSoft.Domain.CoreBC.Fabricantes;
+using AutoSoft.Domain.CoreBC.Modelos;
 using AutoSoft.Infrastructure.Domain;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Carros
+namespace AutoSoft.Domain.CoreBC.Carros
 {
     public class Carro : ValueObject<int>
     {

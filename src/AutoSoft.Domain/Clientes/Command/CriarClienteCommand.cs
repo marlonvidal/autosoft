@@ -1,4 +1,4 @@
-﻿using AutoSoft.Domain.Telefones;
+﻿using AutoSoft.Domain.CoreBC.Telefones;
 using AutoSoft.Infrastructure.Commands;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Clientes.Command
+namespace AutoSoft.Domain.CoreBC.Clientes.Command
 {
     public class CriarClienteCommand : ICommand
     {

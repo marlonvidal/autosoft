@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Items
+namespace AutoSoft.Domain.CoreBC.Items
 {
     public class DiscriminacaoItem : ValueObject<int>
     {

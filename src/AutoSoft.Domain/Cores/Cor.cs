@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Cores
+namespace AutoSoft.Domain.CoreBC.Cores
 {
     public class Cor : ValueObject<int>
     {

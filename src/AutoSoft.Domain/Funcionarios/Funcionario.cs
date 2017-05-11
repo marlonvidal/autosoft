@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Funcionarios
+namespace AutoSoft.Domain.CoreBC.Funcionarios
 {
     public class Funcionario : Entity<int>
     {

@@ -1,6 +1,6 @@
-﻿using AutoSoft.Domain.Clientes;
-using AutoSoft.Domain.Clientes.Command;
-using AutoSoft.Domain.Clientes.Validation;
+﻿using AutoSoft.Domain.CoreBC.Clientes;
+using AutoSoft.Domain.CoreBC.Clientes.Command;
+using AutoSoft.Domain.CoreBC.Clientes.Validation;
 using AutoSoft.Infrastructure.Validation;
 using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,20 +11,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Tests.Customer
+namespace AutoSoft.Domain.CoreBC.Tests.Clientes
 {
     [TestClass]
-    public class CreateCustomerTests
+    public class CriarClienteTests
     {
         private CriarClienteCommand _command;
         private IValidator<CriarClienteCommand> _validator;
 
-        public CreateCustomerTests()
+        public CriarClienteTests()
         {
             _command = new CriarClienteCommand();
             _validator = new CriarClienteValidation();
         }
-
 
         [TestMethod]
         [ExpectedException(typeof(BusinessValidationException))]

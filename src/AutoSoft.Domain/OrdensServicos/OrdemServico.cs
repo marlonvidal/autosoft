@@ -1,5 +1,5 @@
-﻿using AutoSoft.Domain.Carros;
-using AutoSoft.Domain.Clientes;
+﻿using AutoSoft.Domain.CoreBC.Carros;
+using AutoSoft.Domain.CoreBC.Clientes;
 using AutoSoft.Infrastructure.Domain;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.OrdensServicos
+namespace AutoSoft.Domain.CoreBC.OrdensServicos
 {
     public class OrdemServico : AggregateRoot
     {

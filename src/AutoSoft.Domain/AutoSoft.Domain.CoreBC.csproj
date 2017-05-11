@@ -7,8 +7,8 @@
     <ProjectGuid>{E670C0F0-800E-43BF-ABCC-CABF1900E68C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoSoft.Domain</RootNamespace>
-    <AssemblyName>AutoSoft.Domain</AssemblyName>
+    <RootNamespace>AutoSoft.Domain.CoreBC</RootNamespace>
+    <AssemblyName>AutoSoft.Domain.CoreBC</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

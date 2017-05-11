@@ -1,8 +1,8 @@
-﻿using AutoSoft.Domain.Telefones.Command;
-using AutoSoft.Domain.Telefones.Validation;
+﻿using AutoSoft.Domain.CoreBC.Telefones.Command;
+using AutoSoft.Domain.CoreBC.Telefones.Validation;
 using AutoSoft.Infrastructure.Domain;
 
-namespace AutoSoft.Domain.Telefones
+namespace AutoSoft.Domain.CoreBC.Telefones
 {
     public class Telefone : ValueObject<int>
     {

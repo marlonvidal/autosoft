@@ -1,4 +1,4 @@
-﻿using AutoSoft.Domain.Services.Commands;
+﻿using AutoSoft.Domain.CoreBC.Services.Commands;
 using AutoSoft.Infrastructure.Domain;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Services
+namespace AutoSoft.Domain.CoreBC.Services
 {
     public class Service : AggregateRoot
     {

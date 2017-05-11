@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutoSoft.Domain.Clientes.Command;
+using AutoSoft.Domain.CoreBC.Clientes.Command;
 using FluentValidation;
-using AutoSoft.Domain.Telefones;
+using AutoSoft.Domain.CoreBC.Telefones;
 
-namespace AutoSoft.Domain.Clientes
+namespace AutoSoft.Domain.CoreBC.Clientes
 {
     public class Cliente : Entity<long>
     {

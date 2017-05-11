@@ -1,4 +1,4 @@
-﻿using AutoSoft.Domain.Telefones.Command;
+﻿using AutoSoft.Domain.CoreBC.Telefones.Command;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Telefones.Validation
+namespace AutoSoft.Domain.CoreBC.Telefones.Validation
 {
     public class CriarTelefoneValidation : AbstractValidator<CriarTelefoneCommand>
     {

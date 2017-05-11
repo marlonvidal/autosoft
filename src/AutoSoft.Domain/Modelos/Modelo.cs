@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Modelos
+namespace AutoSoft.Domain.CoreBC.Modelos
 {
     public class Modelo : ValueObject<int>
     {

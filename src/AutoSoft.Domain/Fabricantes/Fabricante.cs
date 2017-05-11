@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Fabricantes
+namespace AutoSoft.Domain.CoreBC.Fabricantes
 {
     public class Fabricante : ValueObject<int>
     {
