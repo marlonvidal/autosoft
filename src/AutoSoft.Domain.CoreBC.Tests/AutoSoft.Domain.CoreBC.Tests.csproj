@@ -66,7 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AutoSoft.Domain\AutoSoft.Domain.CoreBC.csproj">
+    <ProjectReference Include="..\AutoSoft.Domain.CoreBC\AutoSoft.Domain.CoreBC.csproj">
       <Project>{e670c0f0-800e-43bf-abcc-cabf1900e68c}</Project>
       <Name>AutoSoft.Domain.CoreBC</Name>
     </ProjectReference>
