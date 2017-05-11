@@ -14,7 +14,7 @@ namespace AutoSoft.Domain.Items
 
         }
 
-        public List<ItemDiscrimination> Items { get; set; }
-        public decimal TotalValue { get; set; }
+        public List<DiscriminacaoItem> Items { get; set; }
+        public decimal ValorTotal { get; set; }
     }
 }

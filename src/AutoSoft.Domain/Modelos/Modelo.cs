@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Manufacturers
+namespace AutoSoft.Domain.Modelos
 {
-    public class Manufacturer : ValueObject<int>
+    public class Modelo : ValueObject<int>
     {
-        public string Name { get; private set; }
+        public string Nome { get; private set; }
     }
 }

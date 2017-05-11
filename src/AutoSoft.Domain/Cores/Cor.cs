@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Colors
+namespace AutoSoft.Domain.Cores
 {
-    public class Color : ValueObject<int>
+    public class Cor : ValueObject<int>
     {
-        public string Name { get; private set; }
+        public string Nome { get; private set; }
     }
 }

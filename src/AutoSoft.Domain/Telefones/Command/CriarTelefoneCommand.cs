@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Phones.Command
+namespace AutoSoft.Domain.Telefones.Command
 {
-    public class CreatePhoneCommand : ICommand
+    public class CriarTelefoneCommand : ICommand
     {
         public int ID { get; set; }
         public string DDD { get; set; }

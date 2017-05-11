@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Domain
 {
-    public enum MeasurementTypes
+    public enum UnidadeMedida
     {
-        Units = 1,
-        Liters = 2
+        Unidades = 1,
+        Litros = 2
     }
 }

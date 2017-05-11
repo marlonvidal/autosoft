@@ -1,5 +1,6 @@
-﻿using AutoSoft.Domain.Customer.Command;
-using AutoSoft.Domain.Customer.Validation;
+﻿using AutoSoft.Domain.Clientes;
+using AutoSoft.Domain.Clientes.Command;
+using AutoSoft.Domain.Clientes.Validation;
 using AutoSoft.Infrastructure.Validation;
 using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -15,13 +16,13 @@ namespace AutoSoft.Domain.Tests.Customer
     [TestClass]
     public class CreateCustomerTests
     {
-        private CreateCustomerCommand _command;
-        private IValidator<CreateCustomerCommand> _validator;
+        private CriarClienteCommand _command;
+        private IValidator<CriarClienteCommand> _validator;
 
         public CreateCustomerTests()
         {
-            _command = new CreateCustomerCommand();
-            _validator = new CreateCustomerValidation();
+            _command = new CriarClienteCommand();
+            _validator = new CriarClienteValidation();
         }
 
 
@@ -29,7 +30,7 @@ namespace AutoSoft.Domain.Tests.Customer
         [ExpectedException(typeof(BusinessValidationException))]
         public void Should_not_create_customer_with_empty_email()
         {
-            var customer = AutoSoft.Domain.Customer.Customer.Create(_command, _validator);
+            var customer = Cliente.Criar(_command, _validator);
         }
     }
 }

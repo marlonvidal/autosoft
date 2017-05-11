@@ -1,4 +1,4 @@
-﻿using AutoSoft.Domain.Customers.Command;
+﻿using AutoSoft.Domain.Clientes.Command;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.Customers.Validation
+namespace AutoSoft.Domain.Clientes.Validation
 {
-    public class CreateCustomerValidation : AbstractValidator<CreateCustomerCommand>
+    public class CriarClienteValidation : AbstractValidator<CriarClienteCommand>
     {
-        public CreateCustomerValidation()
+        public CriarClienteValidation()
         {
             RuleFor(x => x.Email).NotEmpty();
         }
