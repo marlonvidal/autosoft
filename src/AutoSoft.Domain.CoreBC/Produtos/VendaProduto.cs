@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.CoreBC.Items
+namespace AutoSoft.Domain.CoreBC.Produtos
 {
-    public class Item : AggregateRoot
+    public class VendaProduto : AggregateRoot
     {
-        protected Item()
+        protected VendaProduto()
         {
 
         }
 
-        public List<DiscriminacaoItem> Items { get; set; }
+        public List<DiscriminacaoProduto> DescriminacaoProdutos { get; set; }
         public decimal ValorTotal { get; set; }
     }
 }

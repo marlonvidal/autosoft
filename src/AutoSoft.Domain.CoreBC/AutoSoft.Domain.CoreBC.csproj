@@ -50,8 +50,8 @@
     <Compile Include="Clientes\Cliente.cs" />
     <Compile Include="Clientes\Validation\CriarClienteValidation.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\DiscriminacaoItem.cs" />
+    <Compile Include="Produtos\VendaProduto.cs" />
+    <Compile Include="Produtos\DiscriminacaoProduto.cs" />
     <Compile Include="Fabricantes\Fabricante.cs" />
     <Compile Include="Modelos\Modelo.cs" />
     <Compile Include="OrdensServicos\OrdemServico.cs" />
@@ -59,9 +59,9 @@
     <Compile Include="Telefones\Telefone.cs" />
     <Compile Include="Telefones\Validation\CriarTelefoneValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Commands\CreateServiceCommand.cs" />
-    <Compile Include="Services\Service.cs" />
-    <Compile Include="Services\ServiceDiscrimination.cs" />
+    <Compile Include="Servicos\Commands\CriarServicoCommand.cs" />
+    <Compile Include="Servicos\VendaServico.cs" />
+    <Compile Include="Servicos\DiscriminacaoServico.cs" />
     <Compile Include="Funcionarios\Funcionario.cs" />
   </ItemGroup>
   <ItemGroup>

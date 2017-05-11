@@ -5,17 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.CoreBC.Items
+namespace AutoSoft.Domain.CoreBC.Servicos
 {
-    public class DiscriminacaoItem : ValueObject<int>
+    public class DiscriminacaoServico : ValueObject<int>
     {
-        protected DiscriminacaoItem()
+        protected DiscriminacaoServico()
         {
 
         }
 
         public string Descricao { get; private set; }
-        public UnidadeMedida UnidadeMedida { get; private set; }
         public decimal Valor { get; private set; }
     }
 }
