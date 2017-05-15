@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Infrastructure.Domain
 {
-    public interface IEntity<T>
+    public interface IEntity<TKeyType>
     {
-        T ID { get; }
+        TKeyType ID { get; }
     }
 }

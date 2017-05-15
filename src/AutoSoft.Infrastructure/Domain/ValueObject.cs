@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Infrastructure.Domain
 {
-    public class ValueObject<T> : IValueObject<T>
+    public abstract class ValueObject<T> : IValueObject<T>
     {
         public T ID { get; private set; }
 

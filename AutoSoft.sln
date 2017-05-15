@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Domain.CoreBC.Test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A476C366-61F3-4B44-B6BD-491E5E231CBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSoft.Data.EntityFramework", "src\AutoSoft.Data.EntityFramework\AutoSoft.Data.EntityFramework.csproj", "{2E811673-F129-4C4C-A85A-55055EA81AA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{DD4B4714-15C4-42B7-99D2-1E73ED171A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD4B4714-15C4-42B7-99D2-1E73ED171A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD4B4714-15C4-42B7-99D2-1E73ED171A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E811673-F129-4C4C-A85A-55055EA81AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E811673-F129-4C4C-A85A-55055EA81AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E811673-F129-4C4C-A85A-55055EA81AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E811673-F129-4C4C-A85A-55055EA81AA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +70,6 @@ Global
 		{78CB568B-FA9D-4130-AD0B-589503402CBE} = {A476C366-61F3-4B44-B6BD-491E5E231CBC}
 		{00651AC2-090F-4CFB-9AE9-79081554AEA1} = {A476C366-61F3-4B44-B6BD-491E5E231CBC}
 		{DD4B4714-15C4-42B7-99D2-1E73ED171A23} = {5BA533A5-D96E-4B64-BD07-33A648AB47E2}
+		{2E811673-F129-4C4C-A85A-55055EA81AA5} = {A476C366-61F3-4B44-B6BD-491E5E231CBC}
 	EndGlobalSection
 EndGlobal

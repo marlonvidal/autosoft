@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Infrastructure.Domain
 {
-    public abstract class Entity<T> : IEntity<T>
+    public abstract class Entity<TKeyType> : IEntity<TKeyType>
     {
-        public T ID { get; private set; }
+        public TKeyType ID { get; private set; }
 
         protected Entity()
         {
-            ID = default(T);
+            ID = default(TKeyType);
         }
 
-        protected Entity(T id)
+        protected Entity(TKeyType id)
         {
             ID = id;
         }
