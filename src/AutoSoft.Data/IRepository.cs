@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Data
 {
-    public interface IRepository<TEntity, TKeyType> 
-        where TEntity : IEntity<TKeyType>
-        where TKeyType : class
+    public interface IRepository<TEntity> 
+        where TEntity : class
     {
         IList<TEntity> FindAll();
 
         IList<TEntity> FindBy(Expression<Func<TEntity, bool>> condition);
-
-        TEntity FindById(TKeyType id);
 
         TEntity Add(TEntity entity);
 

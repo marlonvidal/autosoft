@@ -8,9 +8,8 @@ using System.Linq.Expressions;
 
 namespace AutoSoft.Data
 {
-    public abstract class BaseRepository<TEntity, TKeyType> : IRepository<TEntity, TKeyType>
-        where TEntity : class, IEntity<TKeyType>
-        where TKeyType : class
+    public abstract class BaseRepository<TEntity> : IRepository<TEntity>
+        where TEntity : class
     {
         protected readonly IUnitOfWork _uow;
 
@@ -25,12 +24,6 @@ namespace AutoSoft.Data
                 return null;
 
             return _uow.QueryableFor<TEntity>().Where(condition).ToList();
-        }
-
-        public TEntity FindById(TKeyType id)
-        {
-            var entity = _uow.GetById<TEntity, TKeyType>(id);
-            return entity;
         }
 
         public IList<TEntity> FindAll()

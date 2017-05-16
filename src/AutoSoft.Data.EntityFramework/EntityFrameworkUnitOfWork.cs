@@ -29,7 +29,7 @@ namespace AutoSoft.Data.EntityFramework
         }
 
         public void Delete<TEntity>(TEntity entity) where TEntity : class
-        {
+        {            
             _dbContext.Entry(entity).State = EntityState.Deleted;
         }
 

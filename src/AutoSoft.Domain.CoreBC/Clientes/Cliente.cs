@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutoSoft.Domain.CoreBC.Clientes.Command;
+using AutoSoft.Domain.CoreBC.Clientes.Commands;
 using FluentValidation;
 using AutoSoft.Domain.CoreBC.Telefones;
 

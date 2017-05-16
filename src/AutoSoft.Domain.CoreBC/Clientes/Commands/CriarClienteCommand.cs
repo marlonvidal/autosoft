@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.CoreBC.Clientes.Command
+namespace AutoSoft.Domain.CoreBC.Clientes.Commands
 {
     public class CriarClienteCommand : ICommand
     {

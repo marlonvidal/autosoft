@@ -44,8 +44,13 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutoSoft.Domain.AuthBC\AutoSoft.Domain.AuthBC.csproj">
+      <Project>{EB58B066-B22F-4927-9B77-782C50392749}</Project>
+      <Name>AutoSoft.Domain.AuthBC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AutoSoft.Domain.CoreBC.Tests\AutoSoft.Domain.CoreBC.Tests.csproj">
       <Project>{dd4b4714-15c4-42b7-99d2-1e73ed171a23}</Project>
       <Name>AutoSoft.Domain.CoreBC.Tests</Name>

@@ -1,6 +1,6 @@
 ﻿using AutoSoft.Domain.CoreBC.Clientes;
-using AutoSoft.Domain.CoreBC.Clientes.Command;
-using AutoSoft.Domain.CoreBC.Clientes.Validation;
+using AutoSoft.Domain.CoreBC.Clientes.Commands;
+using AutoSoft.Domain.CoreBC.Clientes.Validations;
 using AutoSoft.Infrastructure.Validation;
 using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

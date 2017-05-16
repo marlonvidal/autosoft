@@ -60,6 +60,7 @@
     <Compile Include="DependencyResolver\AutofacResolver.cs" />
     <Compile Include="DependencyResolver\IResolver.cs" />
     <Compile Include="Domain\AggregateRoot.cs" />
+    <Compile Include="Domain\DomainEvent.cs" />
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Domain\IDomainEvent.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Events\IEventHandlerAsync.cs" />
     <Compile Include="Events\IEventPublisher.cs" />
+    <Compile Include="Util\Constantes.cs" />
     <Compile Include="Validation\ValidationException.cs" />
     <Compile Include="Validation\ValidationExtensions.cs" />
     <Compile Include="Domain\ValueObject.cs" />

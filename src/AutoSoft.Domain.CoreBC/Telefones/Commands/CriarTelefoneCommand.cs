@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Domain.CoreBC.Telefones.Command
+namespace AutoSoft.Domain.CoreBC.Telefones.Commands
 {
     public class CriarTelefoneCommand : ICommand
     {

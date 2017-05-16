@@ -1,5 +1,5 @@
-﻿using AutoSoft.Domain.CoreBC.Telefones.Command;
-using AutoSoft.Domain.CoreBC.Telefones.Validation;
+﻿using AutoSoft.Domain.CoreBC.Telefones.Commands;
+using AutoSoft.Domain.CoreBC.Telefones.Validations;
 using AutoSoft.Infrastructure.Domain;
 
 namespace AutoSoft.Domain.CoreBC.Telefones
