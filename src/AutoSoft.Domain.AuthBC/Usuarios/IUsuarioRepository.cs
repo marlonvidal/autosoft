@@ -10,6 +10,7 @@ namespace AutoSoft.Domain.AuthBC.Usuarios
     public interface IUsuarioRepository : IRepository<Usuario>
     {
         bool ExisteUsuarioCadastrado(string login);
-        Usuario Adicionar(Usuario usuario);
+        void Adicionar(Usuario usuario);
+        Usuario EncontrarPor(Guid id);
     }
 }

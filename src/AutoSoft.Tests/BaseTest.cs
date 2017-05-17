@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using AutoSoft.Data;
+using AutoSoft.Data.EntityFramework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Data.Tests
+namespace AutoSoft.Tests
 {
     [TestClass]
     public class BaseTest
@@ -32,15 +34,15 @@ namespace AutoSoft.Data.Tests
                     .InstancePerLifetimeScope();
 
                 builder.RegisterAssemblyTypes(new Assembly[] {
-                    typeof(Domain.AuthBC.Usuarios.Validations.CriarUsuarioValidation).Assembly,
+                    typeof(AutoSoft.Domain.AuthBC.Usuarios.Validations.CriarUsuarioValidation).Assembly,
                     typeof(AutoSoft.Domain.CoreBC.Carros.Carro).Assembly
                     })
                     .Where(x => x.Name.EndsWith("Validation"))
                     .AsSelf()
                     .InstancePerLifetimeScope();                
 
-                builder.RegisterType<EntityFramework.EntityFrameworkUnitOfWork>().As<IUnitOfWork>();
-                builder.RegisterType<EntityFramework.AutoSoftContext>().As<DbContext>();
+                builder.RegisterType<EntityFrameworkUnitOfWork>().As<IUnitOfWork>();
+                builder.RegisterType<AutoSoftContext>().As<DbContext>();
 
                 _container = builder.Build();
             }

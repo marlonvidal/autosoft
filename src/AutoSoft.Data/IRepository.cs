@@ -1,5 +1,4 @@
-﻿using AutoSoft.Infrastructure.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Data
 {
-    public interface IRepository<TEntity> 
+    public interface IRepository<TEntity>
         where TEntity : class
     {
         IList<TEntity> FindAll();

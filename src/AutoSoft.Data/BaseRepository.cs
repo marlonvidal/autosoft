@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace AutoSoft.Data
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity>
+    public class BaseRepository<TEntity> : IRepository<TEntity>
         where TEntity : class
     {
         protected readonly IUnitOfWork _uow;
@@ -34,18 +34,21 @@ namespace AutoSoft.Data
         public TEntity Add(TEntity entity)
         {
             var result = _uow.Add(entity);
+            _uow.SaveChanges();
             return result;
         }
 
         public TEntity Update(TEntity entity)
         {
             var result = _uow.Update(entity);
+            _uow.SaveChanges();
             return result;
         }
 
         public void Delete(TEntity entity)
         {
             _uow.Delete(entity);
+            _uow.SaveChanges();
         }
 
         public void Save()

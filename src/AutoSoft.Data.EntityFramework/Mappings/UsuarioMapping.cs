@@ -1,4 +1,4 @@
-﻿using AutoSoft.Domain.AuthBC.Usuarios;
+﻿using AutoSoft.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AutoSoft.Data.EntityFramework.Mappings
 {
-    public class UsuarioMapping : EntityTypeConfiguration<Usuario>
+    public class UsuarioMapping : EntityTypeConfiguration<UsuarioModel>
     {
         public UsuarioMapping()
         {

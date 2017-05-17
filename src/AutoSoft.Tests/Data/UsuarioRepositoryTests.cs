@@ -15,7 +15,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Data.Tests
+namespace AutoSoft.Tests.Data
 {
     [TestClass]
     public class UsuarioRepositoryTests : BaseTest

@@ -12,19 +12,19 @@ namespace AutoSoft.Domain.AuthBC.Usuarios.Handlers
 {
     public class CriarUsuarioHandler : ICommandHandler<CriarUsuarioCommand>
     {
-        private readonly IUsuarioRepository repository;
-        private readonly IValidator<CriarUsuarioCommand> validator;
+        private readonly IUsuarioRepository _repository;
+        private readonly IValidator<CriarUsuarioCommand> _validator;
 
         public CriarUsuarioHandler(IUsuarioRepository repository, IValidator<CriarUsuarioCommand> validator)
         {
-            this.repository = repository;
-            this.validator = validator;
+            this._repository = repository;
+            this._validator = validator;
         }
 
         public IEnumerable<IEvent> Handle(CriarUsuarioCommand command)
         {
-            var usuario = Usuario.Criar(command, validator);
-            repository.Adicionar(usuario);
+            var usuario = Usuario.Criar(command, _validator);
+            _repository.Adicionar(usuario);
 
             return usuario.Events;
         }

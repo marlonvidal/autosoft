@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Entities\DomainAggregateModel.cs" />
+    <Compile Include="Entities\DomainEventModel.cs" />
+    <Compile Include="Entities\UsuarioModel.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,17 +55,20 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoSoft.Domain.AuthBC\AutoSoft.Domain.AuthBC.csproj">
-      <Project>{EB58B066-B22F-4927-9B77-782C50392749}</Project>
+      <Project>{eb58b066-b22f-4927-9b77-782c50392749}</Project>
       <Name>AutoSoft.Domain.AuthBC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AutoSoft.Domain.CoreBC.Tests\AutoSoft.Domain.CoreBC.Tests.csproj">
-      <Project>{dd4b4714-15c4-42b7-99d2-1e73ed171a23}</Project>
-      <Name>AutoSoft.Domain.CoreBC.Tests</Name>
+    <ProjectReference Include="..\AutoSoft.Domain.CoreBC\AutoSoft.Domain.CoreBC.csproj">
+      <Project>{e670c0f0-800e-43bf-abcc-cabf1900e68c}</Project>
+      <Name>AutoSoft.Domain.CoreBC</Name>
     </ProjectReference>
     <ProjectReference Include="..\AutoSoft.Infrastructure\AutoSoft.Infrastructure.csproj">
       <Project>{78cb568b-fa9d-4130-ad0b-589503402cbe}</Project>
       <Name>AutoSoft.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

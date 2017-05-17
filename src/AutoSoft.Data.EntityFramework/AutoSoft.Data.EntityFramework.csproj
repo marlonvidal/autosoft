@@ -42,6 +42,10 @@
       <HintPath>..\..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -60,7 +64,7 @@
     <Compile Include="AutoSoftContext.cs" />
     <Compile Include="AutoSoftInitializer.cs" />
     <Compile Include="EntityFrameworkUnitOfWork.cs" />
-    <Compile Include="Mappings\FuncionarioMapping.cs" />
+    <Compile Include="EventStore.cs" />
     <Compile Include="Mappings\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,17 +73,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AutoSoft.Domain.AuthBC\AutoSoft.Domain.AuthBC.csproj">
-      <Project>{eb58b066-b22f-4927-9b77-782c50392749}</Project>
-      <Name>AutoSoft.Domain.AuthBC</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AutoSoft.Data\AutoSoft.Data.csproj">
       <Project>{00651AC2-090F-4CFB-9AE9-79081554AEA1}</Project>
       <Name>AutoSoft.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AutoSoft.Domain.CoreBC\AutoSoft.Domain.CoreBC.csproj">
-      <Project>{E670C0F0-800E-43BF-ABCC-CABF1900E68C}</Project>
-      <Name>AutoSoft.Domain.CoreBC</Name>
     </ProjectReference>
     <ProjectReference Include="..\AutoSoft.Infrastructure\AutoSoft.Infrastructure.csproj">
       <Project>{78CB568B-FA9D-4130-AD0B-589503402CBE}</Project>

@@ -18,7 +18,8 @@ namespace AutoSoft.Domain.AuthBC.Usuarios.Rules
 
         public bool ExisteUsuarioCadastrado(string login)
         {
-            return _repository.ExisteUsuarioCadastrado(login);
+            var existe = _repository.ExisteUsuarioCadastrado(login);
+            return !existe; //validacao deve retornar true para passar no metodo de validacao
         }
 
         public bool SenhaDigitadaDiferente(CriarUsuarioCommand cmd, string senhaConfirmada)

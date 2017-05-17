@@ -3,8 +3,10 @@ using AutoSoft.Infrastructure.Domain;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -29,11 +31,11 @@ namespace AutoSoft.Data.EntityFramework
         }
 
         public void Delete<TEntity>(TEntity entity) where TEntity : class
-        {            
+        {
             _dbContext.Entry(entity).State = EntityState.Deleted;
         }
 
-        public TEntity GetById<TEntity, TKey>(TKey id)  where TEntity : class, IEntity<TKey>
+        public TEntity GetById<TEntity, TKey>(TKey id) where TEntity : class, IEntity<TKey>
         {
             return _dbContext.Set<TEntity>().Find(id);
         }
@@ -63,7 +65,24 @@ namespace AutoSoft.Data.EntityFramework
 
         public void SaveChanges()
         {
-            _dbContext.SaveChanges();
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                var msg = "";
+
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    msg += $"Entity of type {eve.Entry.Entity.GetType().Name} in state {eve.Entry.State} has the following validation errors:\n";
+
+                    foreach (var ve in eve.ValidationErrors)
+                        msg += $"- Property: { ve.PropertyName }, Error: { ve.ErrorMessage }\n";
+                }
+
+                throw new ValidationException(msg);
+            }
         }
 
         public void Dispose()
