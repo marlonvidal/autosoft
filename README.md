@@ -8,6 +8,7 @@ Stack utilizada:
 * Angular 2
 * Bootstrap
 * Web API 2
+* OWIN
 * Entity Framework
 * SQL Server Compact
 * AutoFac
