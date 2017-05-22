@@ -48,7 +48,6 @@ namespace AutoSoft.Tests.Data
             cmd.Id = idUsuario;
             cmd.Login = loginUsuario;
             cmd.Senha = "123456";
-            cmd.ConfirmarSenha = "123456";
 
             var usuario = Usuario.Criar(cmd, _validator);
             _repositorio.Adicionar(usuario);
@@ -63,7 +62,6 @@ namespace AutoSoft.Tests.Data
                 cmd.Id = idUsuario;
                 cmd.Login = loginUsuario;
                 cmd.Senha = "123456";
-                cmd.ConfirmarSenha = "123456";
 
                 var usuario = Usuario.Criar(cmd, _validator);
                 _repositorio.Adicionar(usuario);

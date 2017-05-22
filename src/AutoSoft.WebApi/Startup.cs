@@ -3,11 +3,16 @@ using Autofac.Integration.WebApi;
 using AutoMapper;
 using AutoSoft.Data.EntityFramework;
 using AutoSoft.Data.Mappings;
+using AutoSoft.Domain.AuthBC.Usuarios;
 using AutoSoft.Infrastructure.Domain;
 using AutoSoft.WebApi.Infrastructure;
 using AutoSoft.WebApi.Infrastructure.ExceptionHandling;
+using AutoSoft.WebApi.Infrastructure.Providers;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
+using System;
 using System.Data.Entity;
 using System.Net.Http;
 using System.Reflection;
@@ -22,23 +27,43 @@ namespace AutoSoft.WebApi
     {
         public void Configuration(IAppBuilder app)
         {
+
             HttpConfiguration config = new HttpConfiguration();
 
+            var container = BuildIoCContainer(config);
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+
             );
 
-            var container = BuildIoCContainer(config);
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+            WebContainerManager.SetConfiguration(config);
+
+            ConfigureOAuth(app);
 
             app.UseAutofacMiddleware(container);
             app.UseAutofacWebApi(config);
+            app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
+        }
+
+        private void ConfigureOAuth(IAppBuilder app)
+        {
+            OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions()
+            {
+                AllowInsecureHttp = true,
+                TokenEndpointPath = new PathString("/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                Provider = new SimpleAuthorizationServerProvider(WebContainerManager.Get<IUsuarioRepository>())
+            };
+
+            app.UseOAuthAuthorizationServer(options);
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
         }
 
         private IContainer BuildIoCContainer(HttpConfiguration config)
@@ -53,7 +78,7 @@ namespace AutoSoft.WebApi
                     typeof(AutoSoft.Infrastructure.Commands.CommandSender).Assembly
                 })
                 .AsImplementedInterfaces()
-                .InstancePerRequest();
+                .InstancePerLifetimeScope();
 
 
             builder.RegisterAssemblyTypes(new Assembly[] {
@@ -73,7 +98,7 @@ namespace AutoSoft.WebApi
 
             builder.RegisterType<AutoSoftContext>()
                 .As<DbContext>()
-                .InstancePerRequest();
+                .InstancePerLifetimeScope();
 
             builder.Register(x => HttpContext.Current != null ?
                 new HttpContextWrapper(HttpContext.Current) :

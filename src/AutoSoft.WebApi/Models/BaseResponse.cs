@@ -7,7 +7,7 @@ namespace AutoSoft.WebApi.Models
 {
     public class SuccessResponse : BaseResponse
     {
-
+        public static SuccessResponse Instance = new SuccessResponse();
     }
 
     public class ErrorResponse : BaseResponse

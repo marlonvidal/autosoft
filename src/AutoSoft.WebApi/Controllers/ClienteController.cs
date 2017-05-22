@@ -23,8 +23,9 @@ namespace AutoSoft.WebApi.Controllers
             _queryDispatcher = queryDispatcher;
         }
 
+        [Authorize]
         [Route("", Name = "PostCliente"), HttpPost]
-        public IHttpActionResult Post([FromBody]UsuarioViewModel viewModel)
+        public IHttpActionResult CriarUsuario([FromBody]UsuarioViewModel viewModel)
         {
             var cmd = new CriarUsuarioCommand();
             cmd.Id = Guid.NewGuid();
@@ -33,7 +34,20 @@ namespace AutoSoft.WebApi.Controllers
 
             _commandSender.Send(cmd, false);
 
-            return Ok(new SuccessResponse());
+            return Ok(SuccessResponse.Instance);
         }
+
+        [Route("autenticar", Name = "AutenticarCliente"), HttpPost]
+        public IHttpActionResult AutenticarUsuario([FromBody]UsuarioViewModel viewModel)
+        {
+            var cmd = new AutenticarUsuarioCommand();
+            cmd.Login = viewModel.Login;
+            cmd.Senha = viewModel.Senha;
+
+            _commandSender.Send(cmd, false);
+
+            return Ok(SuccessResponse.Instance);
+        }
+
     }
 }

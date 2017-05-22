@@ -35,5 +35,11 @@ namespace AutoSoft.Data.Repositories
             var result = _uow.QueryableFor<UsuarioModel>().Where(x => x.Login.ToLower() == login.ToLower()).Count();
             return result > 0;
         }
+
+        public Usuario Autenticar(string login, string senha)
+        {
+            var usuario = _uow.QueryableFor<UsuarioModel>().FirstOrDefault(x => x.Login == login && x.Senha == senha);
+            return _mapper.Map<Usuario>(usuario);
+        }
     }
 }

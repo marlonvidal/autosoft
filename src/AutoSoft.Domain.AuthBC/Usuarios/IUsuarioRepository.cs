@@ -12,5 +12,6 @@ namespace AutoSoft.Domain.AuthBC.Usuarios
         bool ExisteUsuarioCadastrado(string login);
         void Adicionar(Usuario usuario);
         Usuario EncontrarPor(Guid id);
+        Usuario Autenticar(string login, string senha);
     }
 }

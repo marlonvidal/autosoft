@@ -33,10 +33,13 @@ namespace AutoSoft.Infrastructure.Commands
             if (!publishEvents)
                 return;
 
-            foreach (var @event in events)
+            if (events != null)
             {
-                var concreteEvent = EventFactory.CreateConcreteEvent(@event);
-                _eventPublisher.Publish(concreteEvent);
+                foreach (var @event in events)
+                {
+                    var concreteEvent = EventFactory.CreateConcreteEvent(@event);
+                    _eventPublisher.Publish(concreteEvent);
+                }
             }
         }
 
@@ -48,16 +51,19 @@ namespace AutoSoft.Infrastructure.Commands
 
             var events = commandHandler.Handle(command);
 
-            foreach (var @event in events)
+            if (events != null)
             {
-                var concreteEvent = EventFactory.CreateConcreteEvent(@event);
+                foreach (var @event in events)
+                {
+                    var concreteEvent = EventFactory.CreateConcreteEvent(@event);
 
-                _eventStore.SaveEvent<TAggregate>((IDomainEvent)concreteEvent);
+                    _eventStore.SaveEvent<TAggregate>((IDomainEvent)concreteEvent);
 
-                if (!publishEvents)
-                    continue;
+                    if (!publishEvents)
+                        continue;
 
-                _eventPublisher.Publish(concreteEvent);
+                    _eventPublisher.Publish(concreteEvent);
+                }
             }
         }
 
