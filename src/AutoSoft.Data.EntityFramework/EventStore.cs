@@ -1,4 +1,4 @@
-﻿using AutoSoft.Data.Entities;
+﻿using AutoSoft.Data.Model;
 using AutoSoft.Infrastructure.Domain;
 using Newtonsoft.Json;
 using System;
@@ -36,14 +36,14 @@ namespace AutoSoft.Data.EntityFramework
                     });
                 }
 
-                var currentSequenceCount = _dbContext.Set<Entities.DomainEventModel>().Count(x => x.DomainAggregateId == @event.AggregateRootId);
+                var currentSequenceCount = _dbContext.Set<Model.DomainEventModel>().Count(x => x.DomainAggregateId == @event.AggregateRootId);
 
                 var userId = _dbContext.Set<UsuarioModel>()
                         .Where(x => x.Login == _identity.Name)
                         .Select(x => x.Id)
                         .FirstOrDefault();
 
-                _dbContext.Set<Entities.DomainEventModel>().Add(new Entities.DomainEventModel
+                _dbContext.Set<Model.DomainEventModel>().Add(new Model.DomainEventModel
                 {
                     DomainAggregateId = @event.AggregateRootId,
                     SequenceNumber = currentSequenceCount + 1,
@@ -72,14 +72,14 @@ namespace AutoSoft.Data.EntityFramework
                     });
                 }
 
-                var currentSequenceCount = await _dbContext.Set<Entities.DomainEventModel>().CountAsync(x => x.DomainAggregateId == @event.AggregateRootId);                
+                var currentSequenceCount = await _dbContext.Set<Model.DomainEventModel>().CountAsync(x => x.DomainAggregateId == @event.AggregateRootId);                
 
                 var userId = await _dbContext.Set<UsuarioModel>()
                         .Where(x => x.Login == _identity.Name)
                         .Select(x => x.Id)
                         .FirstOrDefaultAsync();
 
-                _dbContext.Set<Entities.DomainEventModel>().Add(new Entities.DomainEventModel
+                _dbContext.Set<Model.DomainEventModel>().Add(new Model.DomainEventModel
                 {
                     DomainAggregateId = @event.AggregateRootId,
                     SequenceNumber = currentSequenceCount + 1,

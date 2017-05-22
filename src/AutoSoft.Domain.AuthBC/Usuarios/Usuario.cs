@@ -16,6 +16,8 @@ namespace AutoSoft.Domain.AuthBC.Usuarios
         public string Login { get; private set; }
         public string Senha { get; private set; }
 
+        public Usuario() { }
+
         protected Usuario(CriarUsuarioCommand cmd) : base(cmd.Id)
         {
             Login = cmd.Login;

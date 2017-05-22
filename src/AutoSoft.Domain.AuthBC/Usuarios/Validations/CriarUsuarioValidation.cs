@@ -24,14 +24,7 @@ namespace AutoSoft.Domain.AuthBC.Usuarios.Validations
                 .NotEmpty()
                 .WithMessage(MensagensValidacao.SENHA_OBRIGATORIA)
                 .Must(rules.ValidarForcaSenha)
-                .WithMessage(MensagensValidacao.SENHA_NAO_ATENDE_REQUISITOS_SEGURANCA);
-
-
-            RuleFor(x => x.ConfirmarSenha)
-                .NotEmpty()
-                .WithMessage(MensagensValidacao.SENHA_OBRIGATORIA)
-                .Must(rules.SenhaDigitadaDiferente)
-                .WithMessage(MensagensValidacao.SENHAS_DIGITADAS_DIFERENTES);
+                .WithMessage(MensagensValidacao.SENHA_NAO_ATENDE_REQUISITOS_SEGURANCA);            
         }
 
         public static class MensagensValidacao

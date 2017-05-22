@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSoft.Data.Entities
+namespace AutoSoft.Data.Model
 {
     public class UsuarioModel
     {

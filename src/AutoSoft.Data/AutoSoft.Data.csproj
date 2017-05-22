@@ -45,9 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="Entities\DomainAggregateModel.cs" />
-    <Compile Include="Entities\DomainEventModel.cs" />
-    <Compile Include="Entities\UsuarioModel.cs" />
+    <Compile Include="Mappings\AuthBoundedContextMappings.cs" />
+    <Compile Include="Model\DomainAggregateModel.cs" />
+    <Compile Include="Model\DomainEventModel.cs" />
+    <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

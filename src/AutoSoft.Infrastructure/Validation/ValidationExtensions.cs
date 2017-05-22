@@ -19,13 +19,13 @@ namespace AutoSoft.Infrastructure.Domain
             var validationResult = validator.Validate(command);
 
             if (!validationResult.IsValid)
-                throw new BusinessValidationException(BuildErrorMesage(validationResult.Errors));
+                throw new BusinessValidationException(BuildErrorMesage(validationResult.Errors), validationResult.Errors);
         }
 
         private static string BuildErrorMesage(IEnumerable<ValidationFailure> errors)
         {
-            var errorsText = errors.Select(x => "\r\n - " + x.ErrorMessage).ToArray();
-            return "Validation failed: " + string.Join("", errorsText);
+            var errorsText = errors.Select(x => x.ErrorMessage).ToArray();
+            return "Erro de validação: " + string.Join(", ", errorsText);
         }
     }
 }

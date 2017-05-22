@@ -1,5 +1,5 @@
 ﻿using AutoSoft.Domain.AuthBC.Usuarios;
-using AutoSoft.Data.Entities;
+using AutoSoft.Data.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

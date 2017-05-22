@@ -6,10 +6,9 @@ using System.Web;
 
 namespace AutoSoft.WebApi.Models
 {
-    public class UsuarioModel
+    public class UsuarioViewModel
     {
         public string Login { get; set; }        
         public string Senha { get; set; }
-        public string ConfirmarSenha { get; set; }
     }
 }

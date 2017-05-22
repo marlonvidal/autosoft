@@ -1,8 +1,11 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
+using AutoMapper;
 using AutoSoft.Data.EntityFramework;
+using AutoSoft.Data.Mappings;
 using AutoSoft.Infrastructure.Domain;
 using AutoSoft.WebApi.Infrastructure;
+using AutoSoft.WebApi.Infrastructure.ExceptionHandling;
 using Microsoft.Owin;
 using Owin;
 using System.Data.Entity;
@@ -10,6 +13,7 @@ using System.Net.Http;
 using System.Reflection;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 [assembly: OwinStartup(typeof(AutoSoft.WebApi.Startup))]
 namespace AutoSoft.WebApi
@@ -30,6 +34,7 @@ namespace AutoSoft.WebApi
 
             var container = BuildIoCContainer(config);
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
 
             app.UseAutofacMiddleware(container);
             app.UseAutofacWebApi(config);
@@ -79,6 +84,12 @@ namespace AutoSoft.WebApi
             builder.RegisterType<UserIdentity>()
                 .As<IIdentity>()
                 .InstancePerRequest();
+
+            builder.Register(x => new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new AuthBoundedContextMappings());
+            }).CreateMapper())
+            .As<IMapper>().SingleInstance();
 
 
             return builder.Build();
