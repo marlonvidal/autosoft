@@ -118,8 +118,6 @@ namespace AutoSoft.WebApi
             }).CreateMapper())
             .As<IMapper>().SingleInstance();
 
-            Mapper.AssertConfigurationIsValid();
-
 
             return builder.Build();
         }

@@ -2,9 +2,11 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = webpackMerge(commonConfig, {
-    devtool: 'cheap-module-eval-source-map',
+    //devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
 
     output: {
         path: helpers.root('dist'),
@@ -14,7 +16,8 @@ module.exports = webpackMerge(commonConfig, {
     },
 
     plugins: [
-      new ExtractTextPlugin('[name].css')
+      new ExtractTextPlugin('[name].css'),
+      new WriteFilePlugin()
     ],
 
     devServer: {
