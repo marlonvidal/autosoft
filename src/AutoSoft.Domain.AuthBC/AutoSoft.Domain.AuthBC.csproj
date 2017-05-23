@@ -46,16 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuarios\Commands\AutenticarUsuarioCommand.cs" />
     <Compile Include="Usuarios\Commands\CriarUsuarioCommand.cs" />
     <Compile Include="Usuarios\Events\UsuarioCriadoEvent.cs" />
-    <Compile Include="Usuarios\Handlers\AutenticarUsuarioHandler.cs" />
     <Compile Include="Usuarios\Handlers\CriarUsuarioHandler.cs" />
     <Compile Include="Usuarios\IUsuarioRepository.cs" />
     <Compile Include="Usuarios\Rules\IUsuarioRules.cs" />
     <Compile Include="Usuarios\Rules\UsuarioRules.cs" />
     <Compile Include="Usuarios\Usuario.cs" />
-    <Compile Include="Usuarios\Validations\AutenticarUsuarioValidation.cs" />
     <Compile Include="Usuarios\Validations\CriarUsuarioValidation.cs" />
   </ItemGroup>
   <ItemGroup>

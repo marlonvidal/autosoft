@@ -38,8 +38,8 @@ namespace AutoSoft.WebApi.Infrastructure.Providers
                     context.SetError("invalid_grant", "Usuário e/ou senha inválidos");
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new Claim("login", context.UserName));
-                identity.AddClaim(new Claim("role", "usuario"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.Role, Roles.Admin));
 
                 context.Validated(identity);
             });

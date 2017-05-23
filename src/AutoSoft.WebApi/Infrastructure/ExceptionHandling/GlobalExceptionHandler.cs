@@ -26,11 +26,6 @@ namespace AutoSoft.WebApi.Infrastructure.ExceptionHandling
                 context.Result = new ErrorResult(context.Request, HttpStatusCode.BadRequest, businessValidationException.Messages);
                 return;
             }
-            if (exception is UnauthorizedAccessException)
-            {
-                context.Result = new ErrorResult(context.Request, HttpStatusCode.Unauthorized, exception.Message);
-                return;
-            }
 
             context.Result = new ErrorResult(context.Request, HttpStatusCode.InternalServerError, exception.Message);
         }

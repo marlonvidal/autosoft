@@ -163,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\autosoft_db.sdf" />
-    <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
@@ -188,13 +187,12 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Infrastructure\ExceptionHandling\ErrorResult.cs" />
     <Compile Include="Infrastructure\ExceptionHandling\GlobalExceptionHandler.cs" />
     <Compile Include="Infrastructure\Providers\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Infrastructure\Roles.cs" />
     <Compile Include="Infrastructure\UserIdentity.cs" />
+    <Compile Include="Infrastructure\Validation\ValidateRequest.cs" />
     <Compile Include="Infrastructure\WebContainerManager.cs" />
     <Compile Include="Models\BaseResponse.cs" />
     <Compile Include="Models\UsuarioViewModel.cs" />

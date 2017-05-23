@@ -2,6 +2,8 @@
 using AutoSoft.Domain.AuthBC.Usuarios.Commands;
 using AutoSoft.Infrastructure.Commands;
 using AutoSoft.Infrastructure.Queries;
+using AutoSoft.WebApi.Infrastructure;
+using AutoSoft.WebApi.Infrastructure.Validation;
 using AutoSoft.WebApi.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ using System.Web.Http;
 
 namespace AutoSoft.WebApi.Controllers
 {
+    [ValidateRequest]
     [RoutePrefix("api/cliente")]
     public class ClienteController : ApiController
     {
@@ -23,7 +26,7 @@ namespace AutoSoft.WebApi.Controllers
             _queryDispatcher = queryDispatcher;
         }
 
-        [Authorize]
+        [Authorize(Roles = Roles.Admin)]
         [Route("", Name = "PostCliente"), HttpPost]
         public IHttpActionResult CriarUsuario([FromBody]UsuarioViewModel viewModel)
         {
@@ -36,18 +39,5 @@ namespace AutoSoft.WebApi.Controllers
 
             return Ok(SuccessResponse.Instance);
         }
-
-        [Route("autenticar", Name = "AutenticarCliente"), HttpPost]
-        public IHttpActionResult AutenticarUsuario([FromBody]UsuarioViewModel viewModel)
-        {
-            var cmd = new AutenticarUsuarioCommand();
-            cmd.Login = viewModel.Login;
-            cmd.Senha = viewModel.Senha;
-
-            _commandSender.Send(cmd, false);
-
-            return Ok(SuccessResponse.Instance);
-        }
-
     }
 }

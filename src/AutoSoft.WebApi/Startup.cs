@@ -54,7 +54,7 @@ namespace AutoSoft.WebApi
 
         private void ConfigureOAuth(IAppBuilder app)
         {
-            OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions()
+            var serverOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
@@ -62,8 +62,10 @@ namespace AutoSoft.WebApi
                 Provider = new SimpleAuthorizationServerProvider(WebContainerManager.Get<IUsuarioRepository>())
             };
 
-            app.UseOAuthAuthorizationServer(options);
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            app.UseOAuthAuthorizationServer(serverOptions);
+
+            var bearerOptions = new OAuthBearerAuthenticationOptions();
+            app.UseOAuthBearerAuthentication(bearerOptions);
         }
 
         private IContainer BuildIoCContainer(HttpConfiguration config)
@@ -115,6 +117,8 @@ namespace AutoSoft.WebApi
                 cfg.AddProfile(new AuthBoundedContextMappings());
             }).CreateMapper())
             .As<IMapper>().SingleInstance();
+
+            Mapper.AssertConfigurationIsValid();
 
 
             return builder.Build();
