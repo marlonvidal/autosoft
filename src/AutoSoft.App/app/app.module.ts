@@ -14,7 +14,8 @@ import { routing }        from './app.routing';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { HomeComponent } from './home/index';
+import { HomeComponent, ClienteComponent } from './secure/index';
+import { SecureComponent, SecureFooterComponent, SecureNavBarComponent, SecureHeaderComponent } from './layouts/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 
@@ -29,8 +30,13 @@ import { RegisterComponent } from './register/index';
         AppComponent,
         AlertComponent,
         HomeComponent,
+        ClienteComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        SecureComponent,
+        SecureFooterComponent,
+        SecureNavBarComponent, 
+        SecureHeaderComponent
     ],
     providers: [
         AuthGuard,
